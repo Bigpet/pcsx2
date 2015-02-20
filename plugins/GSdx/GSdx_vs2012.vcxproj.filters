@@ -117,6 +117,12 @@
     <ClCompile Include="GSRendererSW.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GSWndSWWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GSDeviceSWWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="GSSetting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -456,6 +462,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GSRendererSW.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GSWndSWWin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GSDeviceSWWin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GSScanlineEnvironment.h">

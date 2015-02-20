@@ -351,6 +351,12 @@
     <ClCompile Include="GSRendererCL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GSWndSWWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GSDeviceSWWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GLLoader.h">
@@ -711,6 +717,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GSRendererCL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GSWndSWWin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GSDeviceSWWin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

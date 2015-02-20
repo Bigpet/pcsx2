@@ -35,8 +35,10 @@
 #include "GSRendererDX11.h"
 #include "GSDevice9.h"
 #include "GSDevice11.h"
+#include "GSDeviceSWWin.h"
 #include "GSWndDX.h"
 #include "GSWndWGL.h"
+#include "GSWndSWWin.h"
 #include "GSRendererCS.h"
 #include "GSSettingsDlg.h"
 
@@ -228,6 +230,9 @@ static int _GSopen(void** dsp, char* title, int renderer, int threads = -1)
 		case 3: case 4: case 5: case 15:
 			dev = new GSDevice11(); 
 			break;
+		case 18:
+			dev = new GSDeviceSWWin(); //use GSDeviceSW
+			break;
 #endif
 		case 9: case 10: case 11: case 16:
 			dev = new GSDeviceNull(); 
@@ -253,6 +258,9 @@ static int _GSopen(void** dsp, char* title, int renderer, int threads = -1)
 				break;
 			case 3: 
 				s_gs = (GSRenderer*)new GSRendererDX11(); 
+				break;
+			case 18:
+				s_gs = new GSRendererSW(threads);
 				break;
 #endif
 			case 12: 
@@ -285,6 +293,9 @@ static int _GSopen(void** dsp, char* title, int renderer, int threads = -1)
 			{
 			case 12: case 13: case 17:
 				s_gs->m_wnd = new GSWndWGL();
+				break;
+			case 18:
+				s_gs->m_wnd = new GSWndSWWin(static_cast<GSDeviceSWWin*>(dev));
 				break;
 			default:
 				s_gs->m_wnd = new GSWndDX();
@@ -440,6 +451,7 @@ EXPORT_C_(int) GSopen2(void** dsp, uint32 flags)
 			case 3: renderer = 4; break; // DX11: HW to SW
 			case 13: renderer = 12; break; // OGL: SW to HW
 			case 12: renderer = 13; break; // OGL: HW to SW
+			case 18: renderer = 18; break; // SW: can't switch to HW rendering with SW Wwndow
 			default: renderer = best_sw_renderer; // If wasn't using DX (e.g. SDL), use best SW renderer.
 		}
 

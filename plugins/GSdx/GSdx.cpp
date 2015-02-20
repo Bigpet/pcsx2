@@ -141,6 +141,7 @@ GSdxApp::GSdxApp()
 	m_gs_renderers.push_back(GSSetting(12, "OpenGL", "Hardware"));
 	m_gs_renderers.push_back(GSSetting(13, "OpenGL", "Software"));
 	m_gs_renderers.push_back(GSSetting(17, "OpenGL", "OpenCL"));
+	m_gs_renderers.push_back(GSSetting(18, "Software", "Software"));
 
 	m_gs_interlace.push_back(GSSetting(0, "None", ""));
 	m_gs_interlace.push_back(GSSetting(1, "Weave tff", "saw-tooth"));
